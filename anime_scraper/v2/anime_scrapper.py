@@ -1,5 +1,4 @@
-from requests import HTTPError, Response, request, Session
-import json
+from requests import HTTPError, request
 import csv
 import time
 import os
