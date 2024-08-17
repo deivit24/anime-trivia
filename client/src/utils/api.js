@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000/trivia";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 export class TriviaApi {
   constructor(baseURL = API_BASE) {
@@ -27,7 +27,7 @@ export class TriviaApi {
             "Content-Type": "application/json",
             // Add more headers here if needed
           },
-        },
+        }
       );
 
       if (!response.ok) {
