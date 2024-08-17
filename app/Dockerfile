@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y netcat-openbsd
 
 RUN pip install --upgrade pip
-COPY ../requirements.txt /usr/src/requirements.txt
+COPY ./app/requirements.txt /usr/src/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY ./app/dbt_anime /usr/src/dbt_anime  
