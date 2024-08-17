@@ -31,7 +31,7 @@ services:
             context: ./client
             dockerfile: Dockerfile
         ports:
-            - 5137:5137
+            - 8080:8080
         stdin_open: true
         tty: true
         environment:
@@ -39,7 +39,6 @@ services:
         volumes:
             - ./client:/client
             - /client/node_modules
-        network_mode: "host"
         
 volumes:
     postgres_data:
