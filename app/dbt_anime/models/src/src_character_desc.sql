@@ -1,0 +1,1 @@
+select * from {{ source('anime_db', 'character_desc') }}

@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: anime_db
+    schema: raw
+    tables:
+      - name: anime
+        identifier: anime
+        description: This is RAW anime data from ANIDB
+
+      - name: character
+        identifier: character
+        description: This is RAW characters data from ANIDB
+
+      - name: character_desc
+        identifier: character_desc
+        description: This is RAW character description data from ANIDB

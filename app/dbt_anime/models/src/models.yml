@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: src_anime
+    description: Anime data from AniDB
+
+  - name: src_characters
+    description: Character data from AniDB
+
+  - name: src_character_desc
+    description: Character description data from AniDB

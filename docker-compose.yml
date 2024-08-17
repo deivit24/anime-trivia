@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+    api:
+        container_name: anime-api
+        build:
+            context: .
+            dockerfile: ./app/Dockerfile
+        restart: always
+        volumes:
+            - ./app:/usr/src
+        env_file:
+            - ./.env
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+    db:
+        image: postgres:14-alpine
+        container_name: anime-db
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        env_file:
+            - ./.env
+        ports:
+            - 5432:5432
+        expose:
+            - 5432
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        ports:
+            - 5137:5137
+        stdin_open: true
+        tty: true
+        environment:
+            - CHOKIDAR_USEPOLING=true
+        volumes:
+            - ./client:/client
+            - /client/node_modules
+        network_mode: "host"
+        
+volumes:
+    postgres_data:
+    client:

@@ -1,0 +1,161 @@
+version: 2
+
+models:
+  - name: anime_characters
+    description: This table holds all characters from anime data
+    columns:
+      - name: id
+        description: Unique Identifier 
+        tests:
+          - unique
+          - not_null
+
+      - name: character_id
+        description: Primary Key for character
+        tests:
+          - not_null
+
+      - name: anime_id
+        description: Primary Key for anime
+        tests:
+          - not_null
+
+      - name: character_external_id
+        description: Character ID for AniDB
+        tests:
+          - not_null
+
+      - name: anime_external_id
+        description: Anime ID for AniDB
+        tests:
+          - not_null
+
+      - name: media_type
+        description: Type of media medium
+        tests:
+          - not_null
+
+      - name: character_name
+        description: Character name
+        tests:
+          - not_null
+
+      - name: character_image
+        description: Character image src
+
+      - name: character_type
+        description: Character type
+        tests:
+          - accepted_values:
+              values: [
+                'Character',
+                'Organisation',
+                'Vehicle',
+                'Mecha'
+              ]
+      - name: character_rating
+        description: Character rating
+
+      - name: anime_title
+        description: Anime where character first appeared source from anime
+        tests:
+          - not_null
+
+      - name: anime_title_secondary
+        description: Anime where character first appeared source from characters
+        tests:
+          - not_null
+
+      - name: anime_image
+        description: Anime image where character first appeared
+
+      - name: trash
+        description: Trash percentage
+
+      - name: anime_popularity
+        description: Anime popularity rank
+
+      - name: anime_favorited
+        description: Anime favorited rank
+          
+  - name: anime_character_description
+    description: This table holds only characters from anime data with descriptions
+    columns:
+      - name: id
+        description: Unique Identifier 
+        tests:
+          - unique
+          - not_null
+
+      - name: character_id
+        description: Primary Key for character
+        tests:
+          - not_null
+
+      - name: anime_id
+        description: Primary Key for anime
+        tests:
+          - not_null
+
+      - name: character_external_id
+        description: Character ID for AniDB
+        tests:
+          - not_null
+
+      - name: anime_external_id
+        description: Anime ID for AniDB
+        tests:
+          - not_null
+
+      - name: media_type
+        description: Type of media medium
+        tests:
+          - not_null
+
+      - name: character_name
+        description: Character name
+        tests:
+          - not_null
+
+      - name: character_image
+        description: Character image src
+
+      - name: character_type
+        description: Character type
+        tests:
+          - accepted_values:
+              values: [
+                'Character',
+                'Organisation',
+                'Vehicle',
+                'Mecha'
+              ]
+      - name: character_rating
+        description: Character rating
+
+      - name: anime_title
+        description: Anime where character first appeared source from anime
+        tests:
+          - not_null
+
+      - name: anime_title_secondary
+        description: Anime where character first appeared source from characters
+        tests:
+          - not_null
+
+      - name: anime_image
+        description: Anime image where character first appeared
+
+      - name: trash
+        description: Trash percentage
+
+      - name: anime_popularity
+        description: Anime popularity rank
+
+      - name: anime_favorited
+        description: Anime favorited rank
+
+      - name: character_description
+        description: Character description       
+        tests: 
+          - not_null

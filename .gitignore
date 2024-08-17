@@ -1,0 +1,9 @@
+*.env  
+.python-version
+*logs
+__pycache__
+
+dbt_anime/dbt_packages
+dbt_anime/target
+dbt_anime/.user.yml
+*csv_files*
