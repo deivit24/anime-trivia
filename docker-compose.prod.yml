@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+    api:
+        env_file:
+            - ./.env.prod
+        ports:
+            - "8000:8000" # Only expose if needed
+    db:
+        env_file:
+            - ./.env.prod
+    client:
+        env_file:
+            - ./client/.env.prod
+        ports:
+            - "8080:8080" # Only expose if needed
+
