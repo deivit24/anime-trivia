@@ -1,5 +1,6 @@
 *.env  
 .python-version
+*venv
 *logs
 __pycache__
 

@@ -33,7 +33,7 @@ services:
         ports:
             - 8080:8080
         env_file:
-            - ./client/.env
+            - ./.env
         stdin_open: true
         tty: true
         environment:
